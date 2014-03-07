@@ -4,9 +4,6 @@ function logIP()
 {  
      $ipLog="logfile.htm"; // Your logfiles name here (.txt or .html extensions ok) 
 
-     // IP logging function by Dave Lauderdale 
-     // Originally published at: www.digi-dl.com 
-
      $register_globals = (bool) ini_get('register_gobals'); 
      if ($register_globals) $ip = getenv(REMOTE_ADDR); 
      else $ip = $_SERVER['REMOTE_ADDR']; 
