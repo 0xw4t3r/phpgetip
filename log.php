@@ -8,14 +8,14 @@ function logIP()
      if ($register_globals) $ip = getenv(REMOTE_ADDR); 
      else $ip = $_SERVER['REMOTE_ADDR']; 
 
-     $date=date ("F Y H:i:s"); 
+     $date=date ("d F Y H:i:s"); 
      $log=fopen("$ipLog", "a+"); 
 
      if (preg_match("/\bhtm\b/i", $ipLog) || preg_match("/\bhtml\b/i", $ipLog))  
      { 
-          fputs($log, "Logged IP address: $ip - Date logged: $date UTC<br>"); 
+          fputs($log, "Logged IP address: $ip - Date logged: $date<br>"); 
      } 
-     else fputs($log, "Logged IP address: $ip - Date logged: $date UTC\n"); 
+     else fputs($log, "Logged IP address: $ip - Date logged: $date\n"); 
 
      fclose($log); 
 } 
