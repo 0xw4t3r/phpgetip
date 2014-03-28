@@ -1,26 +1,30 @@
-<?php 
+<?php
 
-function logIP() 
-{  
-     $ipLog="logfile.htm"; // Your logfiles name here (.txt or .html extensions ok) 
+function logIP()
+{
+     $ipLog="logfile.php"; // Your logfiles name here (.txt or .html extensions ok)
 
-     $register_globals = (bool) ini_get('register_gobals'); 
-     if ($register_globals) $ip = getenv(REMOTE_ADDR); 
-     else $ip = $_SERVER['REMOTE_ADDR']; 
+     // IP logging function by Dave Lauderdale
+     // Originally published at: www.digi-dl.com
 
-     $date=date ("d F Y H:i:s"); 
-     $log=fopen("$ipLog", "a+"); 
+     $register_globals = (bool) ini_get('register_gobals');
+     if ($register_globals) $ip = getenv(REMOTE_ADDR);
+     else $ip = $_SERVER['REMOTE_ADDR'];
 
-     if (preg_match("/\bhtm\b/i", $ipLog) || preg_match("/\bhtml\b/i", $ipLog))  
-     { 
-          fputs($log, "Logged IP address: $ip - Date logged: $date<br>"); 
-     } 
-     else fputs($log, "Logged IP address: $ip - Date logged: $date\n"); 
+     $date=date ("d F Y H:i:s");
+     $log=fopen("$ipLog", "a+");
+     $timezone=date_default_timezone_get();
 
-     fclose($log); 
-} 
-// Place the below function call wherever you want the script to fire. 
-logIp(); 
+     if (preg_match("/\bhtm\b/i", $ipLog) || preg_match("/\bhtml\b/i", $ipLog))
+     {
+          fputs($log, "Logged IP address: $ip - Date logged: $date $timezone <br />");
+     }
+     else fputs($log, "Logged IP address: $ip - Date logged: $date $timezone <br />");
+
+     fclose($log);
+}
+// Place the below function call wherever you want the script to fire.
+logIp();
 
 
 ?>
