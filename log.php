@@ -4,7 +4,7 @@ function logIP()
 {
      $ipLog="logfile.php"; // Your logfiles name here (.txt, .html, .htm & .php extensions ok; others may work too)
 
-     // IP logging function orignallt by Dave Lauderdale editing by rowrz (Alex Goodkind)
+     // IP logging function orignallt by Dave Lauderdale edited by rowrz (Alex Goodkind)
      // Originally published at: www.digi-dl.com
 
      $register_globals = (bool) ini_get('register_gobals');
