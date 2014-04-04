@@ -1,5 +1,5 @@
 <head>
-<title>Partnership Questionnaire</title>
+<title>Index Title</title>
 <meta name="viewport" content="width=device-width">
 <meta name="viewport" content="height=device-height">
 </head>
